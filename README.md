@@ -1,6 +1,6 @@
 # 🎟️ Ticket Booking and Event Management System
 
-A full-stack web application that allows users to discover events, book tickets, and manage event operations seamlessly. This project is built using the MERN stack and includes features like secure booking, QR-based e-tickets, and email notifications.
+A full-stack MERN web application that enables users to discover events, book tickets, and manage event operations. The system includes a modern React frontend and a scalable Node.js backend with QR-based ticketing and email notifications.
 
 ---
 
@@ -8,67 +8,55 @@ A full-stack web application that allows users to discover events, book tickets,
 
 ### 👤 User (Attendee)
 
-* Browse and search events (by date, location, category)
-* Book tickets in real-time
+* Browse events (movies, categories, etc.)
+* Select seats and book tickets
 * Receive QR-code e-ticket via email
-* View booking history
+* View booking details
 
 ### 🧑‍💼 Organizer
 
 * Create and manage events
-* Define ticket categories (General, VIP, etc.)
-* Track bookings and availability
-* Validate tickets using QR codes
+* Control seat availability and pricing
 
 ### 🛠️ Admin
 
 * Manage users and events
-* Monitor platform activity
-* Handle bookings and reports
+* Monitor bookings
 
 ---
 
 ## 🧠 Tech Stack
 
-* **Backend:** Node.js, Express.js
-* **Database:** MongoDB (Mongoose)
-* **Authentication:** JWT
-* **Email Service:** Nodemailer
-* **QR Code:** qrcode package
-* **Other Tools:** VS Code, Postman, Git
+### 🔹 Frontend
+
+* React.js (Vite)
+* Tailwind CSS
+* Component-based architecture
+
+### 🔹 Backend
+
+* Node.js
+* Express.js
+* MongoDB (Mongoose)
+* JWT Authentication
+* Nodemailer (Email)
+* QR Code generation
 
 ---
 
 ## 📁 Project Structure
 
-```
+### 🔹 Backend
+
+```id="b1"
 mini project/
 │── config/
 │     └── db.js
-│
 ├── controllers/
-│     ├── authController.js
-│     ├── bookingController.js
-│     └── eventController.js
-│
 ├── middleware/
-│     ├── authMiddleware.js
-│     └── roleMiddleware.js
-│
 ├── models/
-│     ├── user.js
-│     ├── event.js
-│     └── booking.js
-│
 ├── routes/
-│     ├── authRoutes.js
-│     ├── bookingRoutes.js
-│     └── eventRoutes.js
-│
 ├── utils/
-│     ├── email.js
-│     └── qr.js
-│
 ├── .env
 ├── package.json
 └── server.js
@@ -76,146 +64,173 @@ mini project/
 
 ---
 
-## ⚙️ Installation & Setup
+### 🔹 Frontend
 
-### 1️⃣ Clone the Repository
-
-```
-git clone https://github.com/your-username/ticket-booking-system.git
-cd ticket-booking-system
+```id="b2"
+ticket-booking-frontend/
+│── public/
+│── src/
+│     ├── assets/
+│     ├── components/
+│     │     ├── Navbar.jsx
+│     │     ├── Banner.jsx
+│     │     ├── Categories.jsx
+│     │     ├── Movies.jsx
+│     │     ├── SeatSelection.jsx
+│     │     └── about.jsx
+│     ├── pages/
+│     │     └── Home.jsx
+│     ├── App.jsx
+│     ├── App.css
+│     ├── index.css
+│     └── main.jsx
+│── index.html
+│── package.json
+│── tailwind.config.js
+│── vite.config.js
 ```
 
 ---
 
-### 2️⃣ Install Dependencies
+## ⚙️ Setup Instructions
 
+---
+
+## 🔧 Backend Setup
+
+### 1️⃣ Navigate to backend
+
+```id="b3"
+cd mini-project
 ```
+
+### 2️⃣ Install dependencies
+
+```id="b4"
 npm install
 ```
 
----
+### 3️⃣ Create `.env`
 
-### 3️⃣ Create `.env` File
-
-Create a `.env` file in the root directory and add:
-
-```
+```id="b5"
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
+JWT_SECRET=secret123
 
 EMAIL=your_email@gmail.com
 PASSWORD=your_app_password
 ```
 
----
+### 4️⃣ Run backend
 
-### 4️⃣ Run the Server
-
-```
+```id="b6"
 node server.js
 ```
 
-OR
+---
 
+## 🎨 Frontend Setup
+
+### 1️⃣ Navigate to frontend
+
+```id="b7"
+cd ticket-booking-frontend
 ```
-npm start
+
+### 2️⃣ Install dependencies
+
+```id="b8"
+npm install
+```
+
+### 3️⃣ Run frontend
+
+```id="b9"
+npm run dev
 ```
 
 ---
 
-### ✅ Expected Output
+## 🌐 Application URLs
 
-```
-MongoDB Connected
-Server running on port 5000
-```
-
----
-
-## 🧪 API Testing (Postman)
-
-### 🔐 Auth Routes
-
-* `POST /api/auth/register`
-* `POST /api/auth/login`
-
-### 🎟️ Event Routes
-
-* `POST /api/events` (protected)
-* `GET /api/events`
-
-### 🧾 Booking Routes
-
-* `POST /api/bookings` (protected)
+* Frontend → http://localhost:5173
+* Backend → http://localhost:5000
 
 ---
 
 ## 🔐 Authentication
 
-* Uses JWT tokens
-* Add token in headers:
+* JWT-based authentication
+* Use token in headers:
 
-```
+```id="b10"
 Authorization: Bearer YOUR_TOKEN
 ```
 
 ---
 
-## 📧 Email Setup (Important)
+## 📧 Email Configuration
 
-To enable email functionality:
+To enable email (QR ticket):
 
-1. Enable **2-Step Verification** in Gmail
-2. Generate **App Password**
-3. Use that password in `.env`
-
----
-
-## ⚠️ Common Issues & Fixes
-
-### ❌ MongoDB not connecting
-
-* Check `MONGO_URI` in `.env`
-
-### ❌ Email not sending
-
-* Use Gmail App Password (not normal password)
-
-### ❌ Module errors
-
-* Run `npm install` again
+1. Enable Gmail 2-Step Verification
+2. Generate App Password
+3. Add in `.env`
 
 ---
 
-## 🧠 Key Concepts Used
+## 🧪 API Endpoints
 
-* REST API design
-* MVC architecture
-* JWT authentication
-* MongoDB transactions
-* QR code generation
-* Email integration
+### Auth
+
+* POST `/api/auth/register`
+* POST `/api/auth/login`
+
+### Events
+
+* GET `/api/events`
+* POST `/api/events`
+
+### Booking
+
+* POST `/api/bookings`
+
+---
+
+## ⚠️ Common Issues
+
+* MongoDB not connecting → check `MONGO_URI`
+* Email not working → use App Password
+* Server not starting → check `db.js`
+
+---
+
+## 🧠 Key Concepts
+
+* REST API
+* MVC Architecture
+* JWT Authentication
+* MongoDB Integration
+* QR Code Ticket System
+* Email Automation
 
 ---
 
 ## 📌 Future Improvements
 
 * Payment integration (Stripe/Razorpay)
-* Frontend UI (React)
-* Admin analytics dashboard
-* Ticket scanning system
-
+* Admin dashboard
+* Live seat availability
+* QR scanner system
+  
 ---
 
----
+## ⭐ Note
 
-## ⭐ Acknowledgment
-
-This project was developed as part of a college mini project to demonstrate full-stack development skills and real-world application design.
+This project is built as a college mini project and demonstrates real-world full-stack development with scalable backend architecture and modern frontend design.
 
 ---
 
 ## 📜 License
 
-This project is open-source and free to use for educational purposes.
+Free to use for educational purposes.
