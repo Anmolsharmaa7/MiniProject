@@ -14,6 +14,6 @@ app.get("/api/events", (req, res) => {
   res.json([]);
 });
 
-app.listen(9000, () => {
+app.listen(8000, () => {
   console.log("Server running on port 9000");
 });
