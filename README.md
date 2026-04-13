@@ -208,11 +208,6 @@ To enable email functionality:
 
 ---
 
-## 👨‍💻 Author
-
-* Preet Kumar Singh
-* B.Tech CSE
-
 ---
 
 ## ⭐ Acknowledgment
