@@ -30,6 +30,6 @@ app.post("/api/events", (req, res) => {
 });
 
 // 🚀 server start
-app.listen(9000, () => {
+app.listen(8000, () => {
   console.log("Server running on port 9000");
 });
